@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Hello</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+    <div id="root">
+        <div class="title">
+            <img :src="h1_img" alt="hello">
+            <h1>{{h1_text}}</h1>
+        </div>
+        
+        <div class="sub_title">
+            <h2>{{h2_text}}</h2>
+            <img :src="h2_img" alt="vue">
+        </div>
+        
+    </div>
+
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
