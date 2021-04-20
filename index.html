@@ -10,18 +10,26 @@
 </head>
 <body>
 
+    <!-- inizio elemento con id root per vue js -->
     <div id="root">
-        <div class="title">
-            <img :src="h1_img" alt="hello">
-            <h1>{{h1_text}}</h1>
-        </div>
         
+        <!-- contenuto dell'h1 richiamato tramite data -->
+        <h1>{{title.text}}</h1>
+        
+        <!-- contenuto dell'h2 e della img richiamato tramite data -->
         <div class="sub_title">
-            <h2>{{h2_text}}</h2>
-            <img :src="h2_img" alt="vue">
+            <h2>{{subtitle.text}}</h2>
+            <img :src="subtitle.img" alt="vue">
+        </div>
+
+        <!-- click del bottone richiama la funzione in methods
+        che fa cambiare anche la v-bind:class -->
+        <div @click="changeStatus" class="btn" :class="{'toclick' : button.toClick, 'clicked' : button.clicked}">
+            {{button.text}}
         </div>
         
     </div>
+    <!-- fine elemento con id root per vue js -->
 
     <script type="text/javascript" src="js/script.js"></script>
 

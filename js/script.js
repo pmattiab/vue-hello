@@ -1,11 +1,38 @@
-var app = new Vue(
-    {
-      el: "#root",
-      data: {
-          h1_text: "Hello!",
-          h2_text: "Benvenuto in",
-          h1_img: "https://i.giphy.com/media/LY8yDak6Tngb6FfPrt/giphy.webp",
-          h2_img: "https://thumbs.gfycat.com/PinkPiercingBull-size_restricted.gif"
-      }
+// var per vue js
+var app = new Vue({
+  
+  // elemento con id root
+  el: "#root",
+  
+  // data
+  data: {
+
+    // titolo in data
+    title: {
+      text: "Hello!"
+    },
+
+    // sottotitolo in data
+    subtitle: {
+      text: "Welcome to Vue JS",
+      img: "img/vue_logo.png"
+    },
+
+    // bottone in data
+    button: {
+      text: "Click me",
+      toClick: true,
+      clicked: false
     }
- );
+  },
+
+  // methods (funzioni)
+  methods: {
+    changeStatus(){
+      this.button.text = this.button.text == "Click me" ? "Clicked" : "Click me";
+      this.button.toClick = this.button.toClick == true ? false : true;
+      this.button.clicked = this.button.toClick == false ? true : false;
+    }
+  }
+
+})
