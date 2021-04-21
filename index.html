@@ -14,19 +14,23 @@
     <div id="root">
         
         <!-- contenuto dell'h1 richiamato tramite data -->
-        <h1>{{title.text}}</h1>
+        <h1>{{languagesArray[currentLanIndex].title}}</h1>
         
         <!-- contenuto dell'h2 e della img richiamato tramite data -->
         <div class="sub_title">
-            <h2>{{subtitle.text}}</h2>
-            <img :src="subtitle.img" alt="vue">
+            <h2>{{languagesArray[currentLanIndex].subtitle}}</h2>
+            <img src="img/vue_logo.png" alt="vue">
         </div>
 
-        <!-- click del bottone richiama la funzione in methods
-        che fa cambiare anche la v-bind:class -->
-        <div @click="changeStatus" class="btn" :class="{'toclick' : button.toClick, 'clicked' : button.clicked}">
-            {{button.text}}
+        <div class="btn_cont">
+
+            <!-- click del bottone richiama la funzione in methods
+            che fa cambiare anche la v-bind:class -->
+            <div v-for="(language, index) in languagesArray" @click="changeLan(index)" class="btn" :class="{'active': index == currentLanIndex}">{{languagesArray[index].name}}</div>
+        
         </div>
+        
+        
         
     </div>
     <!-- fine elemento con id root per vue js -->

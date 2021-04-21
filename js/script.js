@@ -7,31 +7,58 @@ var app = new Vue({
   // data
   data: {
 
-    // titolo in data
-    title: {
-      text: "Hello!"
-    },
+    // indice lingua visualizzata
+    currentLanIndex: 2,
 
-    // sottotitolo in data
-    subtitle: {
-      text: "Welcome to Vue JS",
-      img: "img/vue_logo.png"
-    },
+    // array lingue
+    languagesArray: [
+      {
+        name: "english",
+        title: "Hello!",
+        subtitle: "Welcome to Vue JS"
+      },
+
+      {
+        name: "italian",
+        title: "Ciao!",
+        subtitle: "Benvenuto in Vue JS"
+      },
+
+      {
+        name: "español",
+        title: "Hola!",
+        subtitle: "Bienvenido a Vue JS"
+      },
+
+      {
+        name: "français",
+        title: "Bonjour!",
+        subtitle: "Bienvenue à Vue JS"
+      },
+
+      {
+        name: "deutsche",
+        title: "Hallo!",
+        subtitle: "Willkommen zu Vue JS"
+      },
+
+      {
+        name: "中国人",
+        title: "你好!",
+        subtitle: "欢迎客栈 Vue JS"
+      }
+    ],
 
     // bottone in data
     button: {
-      text: "Click me",
-      toClick: true,
-      clicked: false
+      active: false
     }
   },
 
   // methods (funzioni)
   methods: {
-    changeStatus(){
-      this.button.text = this.button.text == "Click me" ? "Clicked" : "Click me";
-      this.button.toClick = this.button.toClick == true ? false : true;
-      this.button.clicked = this.button.toClick == false ? true : false;
+    changeLan(index){
+      this.currentLanIndex = index;
     }
   }
 
